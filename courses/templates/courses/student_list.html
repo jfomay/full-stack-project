@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Student List</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+</head>
+<body>
+    <h1>Student List for {{ course.name }}</h1>
+    {% if students %}
+        <ul id="student_list">
+            {% for student in students %}
+                <li>
+                    {{ student.last_name}}, {{ student.first_name }}
+                </li>
+                {% endfor %}
+        </ul>
+    {% else %}
+        No students for this course yet.
+    {% endif %}
+    <hr />
+    <h1>Add Student</h1>
+    <form method="POST" id="create_student_form">
+        
+        {% csrf_token %}
+        <h1>Create a new Movie</h1>
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" id="first_name">
+        <br /><br />
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" id="last_name">
+        <br /><br />
+
+        <input type="submit" value="Submit" id="form_submit">
+    </form>
+    
+    <script type="text/javascript">
+        var url = window.location.href
+        var token = '{{csrf_token}}'
+        var list = $('#student_list')
+
+        $('#form_submit').on('click', function(e) {
+            e.preventDefault();
+            var first_name = $('#first_name').val()
+            var last_name = $('#last_name').val()
+
+            $.ajax({
+                headers: {"X-CSRFToken": token},
+                url: url,
+                method: 'POST',
+                data: {
+                    'first_name': first_name,
+                    'last_name': last_name
+                }
+            }).done(function(data) {
+                list.append('<li>' + data.last_name + ', ' + data.first_name + '</li>')
+                $('#first_name').val('')
+                $('#last_name').val('')
+            })
+        })
+    </script> 
+
+</body>
+</html>
+

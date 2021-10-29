@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses List</title>
+</head>
+<body>
+    <h1>Courses List</h1>
+    <ul>
+        {% for course in courses %}
+        <li>
+            <a href="{% url 'students_list' course.id %}">{{ course.name }} </a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <br />
+   
+</body>
+</html>
