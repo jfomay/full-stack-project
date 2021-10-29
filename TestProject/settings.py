@@ -29,7 +29,7 @@ ALLOWED_HOSTS = ['jfomay-full-stack.herokuapp.com', '198.211.99.20', 'localhost'
 
 
 # Application definition
-django_heroku.settings(locals())
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -127,3 +127,4 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+django_heroku.settings(locals())
