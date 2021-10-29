@@ -3,23 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Create a Movie</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    
 </head>
 <body>
+    
     <div class="container">
+        
         <form action="{% url 'movie_create' %}" method="POST">
             {% csrf_token %}
-            <h1>Create a new Movie</h1>
-            <label for="title">Title:</label>
-            <input type="text" name="title" id="title">
-            <label for="date_released">Date Released:</label>
+            
+        </div>
+        <marquee direction="right" behavior="alternate" style="background:rgb(223, 200, 71);border:RED 3px SOLID" >  
+            <h1>Create a new Movie</h1> 
+            </marquee>  
+        <div class="gey">
+            <ul class= no-bullets >
+                
+            <li><label for="title">Title:</label>
+            
+            <input type="text" name="title" id="title"></li>
+            <br />
+        <li><label for="date_released" >Date Released:</label>
             <input type="date" name="date_released" id="date_released">
             
-            <input type="submit" value="Submit">
+
+        <input type="submit" value="Submit"></li>
+        </ul>
+        </div>
         </form>
-    </div>
-    
+   
+      
+        
+        
 </body>
 </html>
+<style>
+    .container {
+
+        background: #866917;
+    }
+
+    form {
+        
+        
+        font-family: ' Calibri ';
+        color: #eeff00;
+    }
+
+    .gey {
+        
+        
+        text-indent: 400px;
+        letter-spacing: 2px;
+        font-family: Cambria;
+        font-weight: bold;
+        
+    }
+    ul.no-bullets {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+    }
+
+    body{
+        background: #a4c0e0;
+    }
+</style>

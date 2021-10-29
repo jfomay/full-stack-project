@@ -19,6 +19,7 @@ from myapp import views as myapp_views
 from movies import views as movies_views
 from courses.views import CoursesView, CreateCourseView, StudentApiView
 
+
 urlpatterns = [
     path('', myapp_views.index, name='index'),
     path('my_name/', myapp_views.my_name, name='my_name'),
