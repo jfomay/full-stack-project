@@ -20,7 +20,7 @@ from movies import views as movies_views
 from courses.views import CoursesView, CreateCourseView, StudentApiView
 
 urlpatterns = [
-    path('index/', myapp_views.index, name='index'),
+    path('', myapp_views.index, name='index'),
     path('my_name/', myapp_views.my_name, name='my_name'),
     path('movies/list/', movies_views.list, name='movies_list'),
     path('movies/detail/<int:movie_id>/', movies_views.detail, name='movie_detail'),
