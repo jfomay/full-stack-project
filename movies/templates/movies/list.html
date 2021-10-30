@@ -8,16 +8,16 @@
 </head>
 <body>
    
-   
-    <table width="1905" border="5" class="table">
-        <marquee direction="right" behavior="alternate" style="background:#b8f3ff;border:#63768d 3px SOLID" >  
+   <div class ="midol">
+    <table width="506" border="5" class="table" align="center">
+        <marquee direction="right" scrolldelay ="200" behavior="alternate" style="background:#b8f3ff;border:#63768d 3px SOLID" width ="500">  
             <h1>Movies List</h1> 
             </marquee>  
         {% for movie in movies %}
-        <tr>
+        <tr >
 
       
-            <td><a href="{% url 'movie_detail' movie.id %}"><b><font color="#554971">{{ movie.title }}</font></b></a></td>
+            <td align="center"><a href="{% url 'movie_detail' movie.id %}"><b><font color="#554971">{{ movie.title }}</font></b></a></td>
            
             {% endfor %}
         </tr>
@@ -26,7 +26,7 @@
       
         
     </table>
-        
+</div>    
              
        
            
@@ -38,12 +38,13 @@
 
 body{
     background: #8AC6D0;
+    text-align: center;
 }
 
-    .table a
+.table a
 {
-    display:inline;
-    text-decoration:underline;
-    
+    display:block;
+    text-decoration:none;
 }
+
 </style>
