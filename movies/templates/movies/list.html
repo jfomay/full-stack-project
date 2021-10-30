@@ -7,14 +7,43 @@
     <title>Movies List</title>
 </head>
 <body>
-    <h1>Movies List</h1>
-    <ul>
+   
+   
+    <table width="1905" border="5" class="table">
+        <marquee direction="right" behavior="alternate" style="background:#b8f3ff;border:#63768d 3px SOLID" >  
+            <h1>Movies List</h1> 
+            </marquee>  
         {% for movie in movies %}
-        <li>
-            <a href="{% url 'movie_detail' movie.id %}">{{ movie.title }}</a>
-        </li>
-        {% endfor %}
-    </ul>
+        <tr>
+
+      
+            <td><a href="{% url 'movie_detail' movie.id %}"><b><font color="#554971">{{ movie.title }}</font></b></a></td>
+           
+            {% endfor %}
+        </tr>
+   
+           
+      
+        
+    </table>
+        
+             
+       
+           
+    
 
 </body>
 </html>
+<style>
+
+body{
+    background: #8AC6D0;
+}
+
+    .table a
+{
+    display:inline;
+    text-decoration:underline;
+    
+}
+</style>
