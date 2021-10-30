@@ -10,7 +10,7 @@
 <body background="#">
   
     <div class="cellphone-container" > 
-        <form action="{% url 'movie_create' %}" method="POST">
+        <form action="{% url 'movie_update' %}" method="POST">
             {% csrf_token %}   
         <div class="movie">       
             
@@ -20,13 +20,9 @@
             <div class ="header">
                 
                <h1>Update Movie</h1>
-            </div> 
-             
-            <div class="mr-grid summary-row">
-              
-            
+            </div>       
+            <div class="mr-grid summary-row">   
               <br />
-
               <br />
               <br />
             
