@@ -10,14 +10,14 @@
    
    <div class ="midol">
     <table width="506" border="5" class="table" align="center">
-        <marquee direction="right" scrolldelay ="200" behavior="alternate" style="background:#b8f3ff;border:#63768d 3px SOLID" width ="500">  
+        <marquee direction="right"  style="background:#63768d;border:#63768d 3px SOLID" width ="300">  
             <h1>Movies List</h1> 
             </marquee>  
         {% for movie in movies %}
         <tr >
 
       
-            <td align="center"><a href="{% url 'movie_detail' movie.id %}"><b><font color="#554971">{{ movie.title }}</font></b></a></td>
+            <td align="center" style="background:#b8f3ff"><a href="{% url 'movie_detail' movie.id %}"><b><font color="#554971">{{ movie.title }}</font></b></a></td>
            
             {% endfor %}
         </tr>
@@ -37,7 +37,7 @@
 <style>
 
 body{
-    background: #8AC6D0;
+    background: #5f18d1;
     text-align: center;
 }
 
