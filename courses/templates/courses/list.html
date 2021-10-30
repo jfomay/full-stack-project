@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Courses List</title>
+    
 </head>
 <body>
-    <h1>Courses List</h1>
-    <ul>
+<div class="cellphone-container" align='center'>
+    <h1 style="color: azure">Courses List</h1>
+    <ul class="no-bullets">
         {% for course in courses %}
         <li>
             <a href="{% url 'students_list' course.id %}">{{ course.name }} </a>
@@ -18,6 +20,52 @@
     </ul>
 
     <br />
-   
+</div>
+
+<div class ="container" align="center" width = "50">
+    <a href="{% url 'create_course' %}"> <strong>Back to Create Course </strong> </a>
+</div>
 </body>
 </html>
+
+<style>
+     ul.no-bullets {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+    }
+
+    body {  
+  
+  background:linear-gradient(
+      rgba(30,27,38, 0.95), 
+      rgba(30,27,38, 0.95)),
+    url("https://external-preview.redd.it/VomzGuE3lrTUm2eTzp7Nu5xYds5a1RuHsKc8iRA0Z3M.jpg?auto=webp&s=ba5073637be55fe55335da549a5c91c63bc99cde");
+    
+
+}
+
+
+.cellphone-container{  
+  width:375px;
+  height:650px;
+  background:url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dceec49a-9880-4587-9032-d3e7f4511e8a/dei0n5k-8f7091c8-4c8e-43ad-b0c8-c61efce0e76b.png/v1/fill/w_1024,h_1366,q_80,strp/marci_dota_2_by_chiseshan_dei0n5k-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTM2NiIsInBhdGgiOiJcL2ZcL2RjZWVjNDlhLTk4ODAtNDU4Ny05MDMyLWQzZTdmNDUxMWU4YVwvZGVpMG41ay04ZjcwOTFjOC00YzhlLTQzYWQtYjBjOC1jNjFlZmNlMGU3NmIucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.TowfCCmK5vAQ2uTCJi8IoXkppOQ5fAdi4dzjkV-wL4Y");
+  margin : 60px auto 0 auto;
+  box-shadow:5px 5px 115px -14px rgb(255, 255, 255);
+  border-radius: 4px;
+  background-position-x: left;
+  
+}
+
+.container{
+    background-color: aqua;
+    letter-spacing: 2px;
+    
+    
+}
+
+
+
+
+
+</style>

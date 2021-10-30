@@ -27,7 +27,7 @@ urlpatterns = [
     path('movies/detail/<int:movie_id>/', movies_views.detail, name='movie_detail'),
     path('movies/create/', movies_views.create, name='movie_create'),
     path('movies/update/<int:movie_id>/', movies_views.update, name='movie_update'),
-    path('courses/list/', CoursesView.as_view()),
+    path('courses/list/', CoursesView.as_view(), name="course_list"),
     path('courses/create/', CreateCourseView.as_view(), name ='create_course' ),
     path('courses/<int:course_id>/students', StudentApiView.as_view(), name='students_list'),
     path('admin/', admin.site.urls),
