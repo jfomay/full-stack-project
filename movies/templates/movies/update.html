@@ -10,9 +10,9 @@
 <body background="#">
   
     <div class="cellphone-container" > 
-        <form action="{% url 'movie_update' %}" method="POST">
+        <form action="{% url 'movie_update' movie.id %}" method="POST">
             {% csrf_token %}   
-        <div class="movie">       
+              
             
           
           <div class="text-movie-cont">
